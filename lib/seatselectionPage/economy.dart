@@ -1,4 +1,4 @@
-import 'package:flight_booking/widgets/seat.dart';
+import 'package:flight_booking/seatselectionPage/seat.dart';
 import 'package:flutter/material.dart';
 
 class EconomyClass extends StatefulWidget {
