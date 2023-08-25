@@ -1,5 +1,7 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/businessClass.dart';
 import '../widgets/economy.dart';
 
 class SeatSelection extends StatefulWidget {
