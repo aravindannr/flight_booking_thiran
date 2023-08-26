@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class Button extends StatefulWidget {
-  final Text;
+  final text;
   final buttonPressed;
 
-  const Button({super.key, this.Text, this.buttonPressed});
+  const Button({super.key, this.text, this.buttonPressed});
 
   @override
   State<Button> createState() => _ButtonState();
@@ -24,7 +24,7 @@ class _ButtonState extends State<Button> {
           decoration: BoxDecoration(color: fillcolor,borderRadius: BorderRadius.circular(20)),
           child: Center(
               child: Text(
-            widget.Text,
+            widget.text,
             style: TextStyle(
               color: Colors.white,
             fontSize: 20,

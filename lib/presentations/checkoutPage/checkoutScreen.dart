@@ -1,4 +1,6 @@
 import 'package:flight_booking/presentations/checkoutPage/paymentOptions.dart';
+import 'package:flight_booking/presentations/ticketPage.dart';
+import 'package:flight_booking/seatselectionPage/seatelectionScreen.dart';
 import 'package:flight_booking/widgets/button.dart';
 import 'package:flutter/material.dart';
 
@@ -23,8 +25,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           style: TextStyle(
               color: Colors.black, fontWeight: FontWeight.bold, fontSize: 25),
         ),
-        leading: Icon(
-          Icons.arrow_back,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
           color: Colors.black,
         ),
         backgroundColor: Colors.white,
@@ -35,7 +40,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
         children: [
           Padding(
             padding:
-            const EdgeInsets.only(left: 15, right: 15, top: 8, bottom: 8),
+                const EdgeInsets.only(left: 15, right: 15, top: 8, bottom: 8),
             child: Container(
               height: size.width * 0.2,
               width: double.infinity,
@@ -62,14 +67,14 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           ),
           Padding(
             padding:
-            const EdgeInsets.only(left: 15, right: 15, top: 8, bottom: 8),
+                const EdgeInsets.only(left: 15, right: 15, top: 8, bottom: 8),
             child: Container(
               height: size.width * 0.8,
               width: double.infinity,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10), color: Colors.white),
               child: Column(
-                // mainAxisAlignment: MainAxisAlignment.start,
+                  // mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
@@ -115,7 +120,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                           ),
                           Text("HJB-JKM",
                               style:
-                              TextStyle(fontSize: 20, color: Colors.grey)),
+                                  TextStyle(fontSize: 20, color: Colors.grey)),
                         ],
                       ),
                     ),
@@ -175,9 +180,18 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               price: '450',
             ),
           ),
-          SizedBox(height: 20,),
-          Button(buttonPressed: (){},Text: 'Proceed',)
+          SizedBox(
+            height: 20,
+          ),
+          Button(
+            buttonPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => TicketPage()));
+            },
+            text: 'Proceed',
+          )
         ],
       ),
-    );  }
+    );
+  }
 }

@@ -1,6 +1,7 @@
 import 'package:dotted_border/dotted_border.dart';
+import 'package:flight_booking/presentations/checkoutPage/checkoutScreen.dart';
+import 'package:flight_booking/widgets/button.dart';
 import 'package:flutter/material.dart';
-
 import 'businessClass.dart';
 import 'economy.dart';
 
@@ -23,9 +24,14 @@ class _SeatSelectionState extends State<SeatSelection> {
           style: TextStyle(
               color: Colors.black, fontWeight: FontWeight.bold, fontSize: 25),
         ),
-        leading: Icon(
-          Icons.arrow_back,
-          color: Colors.black,
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
         backgroundColor: const Color.fromARGB(255, 216, 214, 214),
         forceMaterialTransparency: true,
@@ -57,7 +63,7 @@ class _SeatSelectionState extends State<SeatSelection> {
                               padding: const EdgeInsets.only(bottom: 8),
                               child: Row(
                                 mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     "Canada Airlines",
@@ -86,9 +92,9 @@ class _SeatSelectionState extends State<SeatSelection> {
                                       height: 8,
                                       decoration: BoxDecoration(
                                           borderRadius:
-                                          BorderRadius.circular(17),
+                                              BorderRadius.circular(17),
                                           color:
-                                          Color.fromARGB(255, 21, 92, 68)),
+                                              Color.fromARGB(255, 21, 92, 68)),
                                     ),
                                     Stack(children: [
                                       Positioned(
@@ -109,7 +115,7 @@ class _SeatSelectionState extends State<SeatSelection> {
                                       height: 8,
                                       decoration: BoxDecoration(
                                           borderRadius:
-                                          BorderRadius.circular(17),
+                                              BorderRadius.circular(17),
                                           color: Colors.black),
                                     ),
                                   ],
@@ -127,14 +133,14 @@ class _SeatSelectionState extends State<SeatSelection> {
                             ),
                             Padding(
                               padding:
-                              const EdgeInsets.only(top: 8.0, bottom: 8),
+                                  const EdgeInsets.only(top: 8.0, bottom: 8),
                               child: Row(
                                 children: [
                                   Text(
                                     "10:00 AM",
                                     style: TextStyle(
                                         color:
-                                        Color.fromARGB(238, 171, 170, 169),
+                                            Color.fromARGB(238, 171, 170, 169),
                                         fontSize: 15),
                                   ),
                                   Padding(
@@ -144,7 +150,7 @@ class _SeatSelectionState extends State<SeatSelection> {
                                       style: TextStyle(
                                         fontSize: 15,
                                         color:
-                                        Color.fromARGB(238, 171, 170, 169),
+                                            Color.fromARGB(238, 171, 170, 169),
                                       ),
                                     ),
                                   ),
@@ -155,7 +161,7 @@ class _SeatSelectionState extends State<SeatSelection> {
                               padding: const EdgeInsets.only(top: 5),
                               child: Row(
                                 mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Container(
                                     width: 100,
@@ -223,7 +229,7 @@ class _SeatSelectionState extends State<SeatSelection> {
                   children: [
                     Padding(
                       padding:
-                      const EdgeInsets.only(left: 20, right: 20, top: 20),
+                          const EdgeInsets.only(left: 20, right: 20, top: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -270,7 +276,7 @@ class _SeatSelectionState extends State<SeatSelection> {
                                     borderRadius: BorderRadius.circular(5)),
                               ),
                               Text(
-                                "   Selected",
+                                "  Selected",
                                 style: TextStyle(color: Colors.white),
                               )
                             ],
@@ -278,6 +284,18 @@ class _SeatSelectionState extends State<SeatSelection> {
                         ],
                       ),
                     ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Button(
+                      buttonPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CheckoutScreen()));
+                      },
+                      text: "Get your tickets",
+                    )
                   ],
                 ),
               ),

@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import '../widgets/destination.dart';
 import '../widgets/timelineContainer.dart';
 
-class RecentPage extends StatefulWidget {
-  const RecentPage({super.key});
+class DirectionPage extends StatefulWidget {
+  const DirectionPage({super.key});
 
   @override
-  State<RecentPage> createState() => _RecentPageState();
+  State<DirectionPage> createState() => _DirectionPageState();
 }
 
-class _RecentPageState extends State<RecentPage> {
+class _DirectionPageState extends State<DirectionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
